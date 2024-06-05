@@ -13,7 +13,7 @@ void sayMessage(int sleep_time_milliseconds, string user_message) {
     // Wait for required time
     Sleep(sleep_time_milliseconds);
     // Setup the terminal command with espeak.exe
-    string command = "espeak -v lt+f4 \"" + user_message + "\"";
+    string command = "espeak -v en-us \"" + user_message + "\"";
     // Execute the command continuously
     while (1) {    
         system(command.c_str());
@@ -57,8 +57,10 @@ int parseTime(string time_string) {
 
 
 int main(int argc, char *argv[]) {
-    if (argc == 1) invalidArgument(); return 0;
-
+    if (argc == 1) {
+        invalidArgument();
+        return 0;
+    }
     string time_string(argv[1]);
     int time = parseTime(time_string); // Parse the time
 
