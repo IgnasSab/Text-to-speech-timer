@@ -57,7 +57,7 @@ int parseTime(string time_string) {
 
 
 int main(int argc, char *argv[]) {
-    if (argc == 1) invalidArgument();
+    if (argc == 1) invalidArgument(); return 0;
 
     string time_string(argv[1]);
     int time = parseTime(time_string); // Parse the time
